@@ -76,7 +76,7 @@ public class SimpleYandexTranslator implements Translator {
         connection.setDoOutput(true);
         DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
 
-        outputStream.writeBytes("text=" + URLEncoder.encode(input, "UTF-8"));
+        outputStream.writeBytes("&text=" + URLEncoder.encode(input, "UTF-8"));
 
         InputStream response = connection.getInputStream();
         String jsonString = new Scanner(response).nextLine();
