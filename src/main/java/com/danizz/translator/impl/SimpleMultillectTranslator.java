@@ -25,8 +25,11 @@ public class SimpleMultillectTranslator implements Translator {
     public SimpleMultillectTranslator() {
         parser = new NotationParserImpl();
     }
+
     @Override
     public String translate(String lang, String input) throws IOException {
+        input = parser.parseCamelNotation(input);
+        input = parser.parseSnakeNotation(input);
         URL detectLangUrl = new URL(STRING_URL);
 
         HttpURLConnection connection = (HttpURLConnection) detectLangUrl.openConnection();
@@ -60,8 +63,10 @@ public class SimpleMultillectTranslator implements Translator {
     }
 
     private String detectLanguage(String input) throws IOException {
-        URL detectLangUrl = new URL(STRING_URL);
+        input = parser.parseCamelNotation(input);
+        input = parser.parseSnakeNotation(input);
 
+        URL detectLangUrl = new URL(STRING_URL);
         HttpURLConnection connection = (HttpURLConnection) detectLangUrl.openConnection();
         connection.setDoOutput(true);
         DataOutputStream outputStream = new DataOutputStream(connection.getOutputStream());
@@ -79,9 +84,8 @@ public class SimpleMultillectTranslator implements Translator {
         JSONObject jsonObject = (JSONObject) obj;
         jsonObject = (JSONObject) Objects.requireNonNull(jsonObject).get("result");
         jsonObject = (JSONObject) jsonObject.get("language");
-        return (String)jsonObject.get("code");
+        return (String) jsonObject.get("code");
     }
-
 
 
 }
