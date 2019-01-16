@@ -4,15 +4,11 @@
     <vendor email="wottkas@gmail.com" url="https://gitlab.com/DaNizz97">Nizovkin Daniil</vendor>
 
     <description><![CDATA[
-    Enter short description for your plugin here.<br>
-    <em>most HTML tags may be used</em>
-    ]]></description>
+    Translate selected text with Alt + G hotkey or with double mouse click.
+    Change translator engine in Settings | Tools | Translator Settings
+    Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all document.
 
-    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
-         on how to target different products -->
-    <!-- uncomment to enable plugin in all products
-    <depends>com.intellij.modules.lang</depends>
-    -->
+    ]]></description>
 
     <extensions defaultExtensionNs="com.intellij">
         <!-- Add your extensions here -->
