@@ -1,5 +1,6 @@
 package com.danizz.translator.impl;
 
+import com.danizz.PropertiesReader;
 import com.danizz.parser.NotationParser;
 import com.danizz.parser.impl.NotationParserImpl;
 import com.danizz.translator.Translator;
@@ -21,14 +22,17 @@ import java.util.Scanner;
 public class SimpleYandexTranslator implements Translator {
 
     private final NotationParser parser;
-    private final String STRING_TRNSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?" +
-            "key=trnsl.1.1.20190104T101334Z.58a19d25ba02f8b6.b11842436bbf4e1997e4dd963bb66413942b40d9";
-
-    private final String STRING_DETECT_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?" +
-            "key=trnsl.1.1.20190104T101334Z.58a19d25ba02f8b6.b11842436bbf4e1997e4dd963bb66413942b40d9";
+    private final PropertiesReader propertiesReader;
+    private String API_KEY;
+    private String STRING_TRNSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=";
+    private String STRING_DETECT_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=";
 
     public SimpleYandexTranslator() {
         this.parser = new NotationParserImpl();
+        propertiesReader = new PropertiesReader("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
+        API_KEY = propertiesReader.getProperties("yandex.api-key");
+        STRING_TRNSLATE_URL += API_KEY;
+        STRING_DETECT_URL += API_KEY;
     }
 
     @Override
