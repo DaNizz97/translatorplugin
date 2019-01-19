@@ -11,7 +11,10 @@
     ]]></description>
 
     <extensions defaultExtensionNs="com.intellij">
-        <!-- Add your extensions here -->
+        <applicationConfigurable groupId="tools" displayName="Translator Settings"
+                                 id="preferences.TranslatorConfigurable"
+                                 instance="com.danizz.setting.TranslatorConfigurable"/>
+
     </extensions>
 
     <actions>
@@ -25,10 +28,4 @@
         </action>
     </actions>
 
-    <extensions defaultExtensionNs="com.intellij">
-        <applicationConfigurable groupId="tools" displayName="Translator Settings"
-                                 id="preferences.TranslatorConfigurable"
-                                 instance="com.danizz.setting.TranslatorConfigurable"/>
-
-    </extensions>
 </idea-plugin>
