@@ -1,21 +1,19 @@
 package com.danizz;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
-public class PropertiesReader {
+public class PropertiesManager {
 
     private final String path;
     private Properties properties;
 
-    public PropertiesReader(String path) {
+    public PropertiesManager(String path) {
         this.path = path;
         properties = new Properties();
     }
 
-    public String getProperties(String propertyName) {
+    private void loadPropertyFileForInput() {
         try (FileInputStream fis = new FileInputStream(path)) {
             properties.load(fis);
         } catch (FileNotFoundException e) {
@@ -24,6 +22,9 @@ public class PropertiesReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getProperties(String propertyName) {
+        loadPropertyFileForInput();
         return properties.getProperty(propertyName);
     }
-}

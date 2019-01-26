@@ -1,6 +1,6 @@
 package com.danizz.translator.impl;
 
-import com.danizz.PropertiesReader;
+import com.danizz.PropertiesManager;
 import com.danizz.parser.NotationParser;
 import com.danizz.parser.impl.NotationParserImpl;
 import com.danizz.translator.Translator;
@@ -12,14 +12,14 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Objects;
 import java.util.Scanner;
 
+//TODO: split methods translate(String lang, String input) and detectLanguage(String input) into smaller ones
 public class SimpleMultillectTranslator implements Translator {
 
-    private final PropertiesReader propertiesReader;
+    private final PropertiesManager propertiesManager;
     private final NotationParser parser;
     private final String ACCOUNT_ID;
     private final String API_KEY;
@@ -27,9 +27,9 @@ public class SimpleMultillectTranslator implements Translator {
 
     public SimpleMultillectTranslator() {
         parser = new NotationParserImpl();
-        propertiesReader = new PropertiesReader("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
-        ACCOUNT_ID = propertiesReader.getProperties("multillect.account-id");
-        API_KEY = propertiesReader.getProperties("multillect.api-key");
+        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
+        ACCOUNT_ID = propertiesManager.getProperties("multillect.account-id");
+        API_KEY = propertiesManager.getProperties("multillect.api-key");
         STRING_URL += ACCOUNT_ID;
     }
 

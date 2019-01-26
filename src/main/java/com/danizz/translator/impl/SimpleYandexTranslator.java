@@ -1,6 +1,6 @@
 package com.danizz.translator.impl;
 
-import com.danizz.PropertiesReader;
+import com.danizz.PropertiesManager;
 import com.danizz.parser.NotationParser;
 import com.danizz.parser.impl.NotationParserImpl;
 import com.danizz.translator.Translator;
@@ -19,18 +19,19 @@ import java.net.URLEncoder;
 import java.util.Objects;
 import java.util.Scanner;
 
+//TODO: split methods translate(String lang, String input) and detectLanguage(String input) into smaller ones
 public class SimpleYandexTranslator implements Translator {
 
     private final NotationParser parser;
-    private final PropertiesReader propertiesReader;
+    private final PropertiesManager propertiesManager;
     private String API_KEY;
     private String STRING_TRNSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=";
     private String STRING_DETECT_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=";
 
     public SimpleYandexTranslator() {
         this.parser = new NotationParserImpl();
-        propertiesReader = new PropertiesReader("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
-        API_KEY = propertiesReader.getProperties("yandex.api-key");
+        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
+        API_KEY = propertiesManager.getProperties("yandex.api-key");
         STRING_TRNSLATE_URL += API_KEY;
         STRING_DETECT_URL += API_KEY;
     }

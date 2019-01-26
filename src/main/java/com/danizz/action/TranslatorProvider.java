@@ -2,6 +2,7 @@ package com.danizz.action;
 
 import com.danizz.translator.Translator;
 import com.danizz.translator.impl.SimpleMultillectTranslator;
+import com.danizz.translator.impl.SimpleYandexTranslator;
 
 
 public class TranslatorProvider {
@@ -14,7 +15,7 @@ public class TranslatorProvider {
     }
 
     private TranslatorProvider() {
-        this.translator = new SimpleMultillectTranslator();
+        this.translator = new SimpleYandexTranslator();
     }
 
     public Translator setTranslator(Translator translator) {
