@@ -25,8 +25,13 @@ public class TranslationConfigure {
     }
 
     public boolean isModified() {
-        return (!(provider.getTranslator() instanceof SimpleYandexTranslator) || !yandexRadioButton.isSelected()) &&
-                (!(provider.getTranslator() instanceof SimpleMultillectTranslator) || yandexRadioButton.isSelected());
+        return (!(provider.getTranslator() instanceof SimpleYandexTranslator)
+                ||
+                !yandexRadioButton.isSelected())
+                &&
+                (!(provider.getTranslator() instanceof SimpleMultillectTranslator)
+                        ||
+                        yandexRadioButton.isSelected());
     }
 
     public JPanel getRoot() {
