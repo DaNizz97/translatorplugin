@@ -11,6 +11,7 @@ public class PropertiesManager {
     public PropertiesManager(String path) {
         this.path = path;
         properties = new Properties();
+        loadPropertyFileForInput();
     }
 
     private void loadPropertyFileForInput() {
@@ -25,7 +26,6 @@ public class PropertiesManager {
     }
 
     public String getProperties(String propertyName) {
-        loadPropertyFileForInput();
         return properties.getProperty(propertyName);
     }
 
