@@ -31,11 +31,13 @@ public class TranslatorConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return settingsGui.isModified();
+        return settingsGui.isTranslatorTypeModified() || settingsGui.isApiModified();
     }
 
     @Override
     public void apply() {
         settingsGui.selectTranslator();
+        if (settingsGui.isApiModified())
+            settingsGui.updateApiKey();
     }
 }

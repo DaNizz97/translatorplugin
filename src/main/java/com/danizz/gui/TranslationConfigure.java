@@ -1,5 +1,6 @@
 package com.danizz.gui;
 
+import com.danizz.PropertiesManager;
 import com.danizz.action.TranslatorProvider;
 import com.danizz.translator.impl.SimpleMultillectTranslator;
 import com.danizz.translator.impl.SimpleYandexTranslator;
@@ -9,10 +10,13 @@ import javax.swing.*;
 public class TranslationConfigure {
     private JPanel root;
     private JRadioButton yandexRadioButton;
+    private JTextField yandexAPIKey;
     private TranslatorProvider provider;
+    PropertiesManager propertiesManager;
 
     public TranslationConfigure() {
         provider = TranslatorProvider.getInstance();
+        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config2.properties");
     }
 
     public void selectTranslator() {
@@ -24,7 +28,12 @@ public class TranslationConfigure {
         }
     }
 
-    public boolean isModified() {
+    public void updateApiKey() {
+        propertiesManager.setProperty("yandex.api-key", yandexAPIKey.getText());
+        provider.setTranslator(new SimpleYandexTranslator());
+    }
+
+    public boolean isTranslatorTypeModified() {
         return (!(provider.getTranslator() instanceof SimpleYandexTranslator)
                 ||
                 !yandexRadioButton.isSelected())
@@ -32,6 +41,10 @@ public class TranslationConfigure {
                 (!(provider.getTranslator() instanceof SimpleMultillectTranslator)
                         ||
                         yandexRadioButton.isSelected());
+    }
+
+    public boolean isApiModified() {
+        return yandexRadioButton.isSelected() && !yandexAPIKey.getText().isEmpty();
     }
 
     public JPanel getRoot() {
