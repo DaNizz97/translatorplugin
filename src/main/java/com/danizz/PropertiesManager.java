@@ -38,4 +38,8 @@ public class PropertiesManager {
             e.printStackTrace();
         }
     }
+
+    public boolean containsKey(String key) {
+        return properties.containsKey(key);
+    }
 }

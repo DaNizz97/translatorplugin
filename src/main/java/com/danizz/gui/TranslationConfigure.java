@@ -12,24 +12,25 @@ public class TranslationConfigure {
     private JRadioButton yandexRadioButton;
     private JTextField yandexAPIKey;
     private TranslatorProvider provider;
-    PropertiesManager propertiesManager;
+    private PropertiesManager propertiesManager;
 
     public TranslationConfigure() {
         provider = TranslatorProvider.getInstance();
-        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config2.properties");
+        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
     }
 
     public void selectTranslator() {
         if (yandexRadioButton.isSelected()) {
             provider.setTranslator(new SimpleYandexTranslator());
-
+            propertiesManager.setProperty("saved.translator", "yandex");
         } else {
             provider.setTranslator(new SimpleMultillectTranslator());
+            propertiesManager.setProperty("saved.translator", "multillect");
         }
     }
 
     public void updateApiKey() {
-        propertiesManager.setProperty("yandex.api-key", yandexAPIKey.getText());
+        propertiesManager.setProperty("saved.yandex.api-key", yandexAPIKey.getText());
         provider.setTranslator(new SimpleYandexTranslator());
     }
 
