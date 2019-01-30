@@ -2,11 +2,12 @@
     <id>com.danizz.TranslatorPlugin</id>
     <name>Simple Translator</name>
     <vendor email="wottkas@gmail.com" url="https://gitlab.com/DaNizz97">Nizovkin Daniil</vendor>
+    <idea-version since-build="162"/>
 
     <description><![CDATA[
-    Translate selected text with Alt + G hotkey or with double mouse click.
-    Change translator engine in Settings | Tools | Translator Settings
-    Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all document.
+    Translate selected text with Alt + G hotkey or with double mouse click.<br>
+    Change translator engine in Settings | Tools | Translator Settings<br>
+    Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all document.<br>
 
     ]]></description>
 
