@@ -31,8 +31,7 @@ public class PropertiesManager {
 
     public void setProperty(String property, String value) {
         properties.setProperty(property, value);
-        try {
-            OutputStream fos = new FileOutputStream(path);
+        try (OutputStream fos = new FileOutputStream(path)){
             properties.store(fos, null);
         } catch (IOException e) {
             e.printStackTrace();
