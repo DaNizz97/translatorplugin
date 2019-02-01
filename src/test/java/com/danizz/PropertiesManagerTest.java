@@ -36,4 +36,14 @@ public class PropertiesManagerTest {
         String s = pm.getProperties("property-name");
         assertEquals("value", s);
     }
+
+    @Test
+    public void checkContainedKey() {
+        assertTrue(propertiesManager.containsKey("test-property"));
+    }
+
+    @Test
+    public void checkNotContainedKey() {
+        assertFalse(propertiesManager.containsKey(""));
+    }
 }

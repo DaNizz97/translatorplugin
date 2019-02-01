@@ -21,40 +21,25 @@ public class PopupMessageViewer {
         point = textSelector.extractPoint();
     }
 
-    private void showTranslatedText(String translatedText) {
-
+    private void createMessage(String text, JBColor color) {
         JBPopupFactory.getInstance()
                 .createHtmlTextBalloonBuilder(
-                        translatedText,
+                        text,
                         null,
-                        JBColor.LIGHT_GRAY,
+                        color,
                         null)
                 .setFadeoutTime(7500)
                 .createBalloon()
                 .show(new RelativePoint(jComponent, point),
                         Balloon.Position.below);
-    }
-
-    private void showErrorMessage() {
-        JBPopupFactory.getInstance()
-                .createHtmlTextBalloonBuilder(
-                        "Sorry, couldn't translate:(",
-                        null,
-                        JBColor.RED,
-                        null)
-                .setFadeoutTime(7500)
-                .createBalloon()
-                .show(new RelativePoint(jComponent, point),
-                        Balloon.Position.below);
-
     }
 
     public void showMessage(Translator translator, String selectedText) {
         try {
-            showTranslatedText(translator.translate(selectedText));
+            createMessage(translator.translate(selectedText), JBColor.LIGHT_GRAY);
         } catch (IOException e) {
             e.printStackTrace();
-            showErrorMessage();
+            createMessage("Sorry, couldn't translate", JBColor.RED);
         }
     }
 }

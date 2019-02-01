@@ -24,7 +24,7 @@ public class SimpleYandexTranslator implements Translator {
 
     private final NotationParser parser;
     private final PropertiesManager propertiesManager;
-    private String API_KEY;
+    private final String API_KEY;
     private String STRING_TRNSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=";
     private String STRING_DETECT_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=";
 
