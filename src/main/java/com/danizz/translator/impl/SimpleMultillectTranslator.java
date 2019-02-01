@@ -17,7 +17,7 @@ import java.util.Objects;
 import java.util.Scanner;
 
 //TODO: split methods translate(String lang, String input) and detectLanguage(String input) into smaller ones
-public class SimpleMultillectTranslator implements Translator {
+public abstract class SimpleMultillectTranslator implements Translator {
 
     private final PropertiesManager propertiesManager;
     private final NotationParser parser;
