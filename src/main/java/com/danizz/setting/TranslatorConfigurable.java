@@ -19,15 +19,13 @@ public class TranslatorConfigurable implements Configurable {
     private TranslatorProvider provider;
     private Translator translator;
     private JTextField yandexApiKey;
-    private boolean isEnteredKeyValid = true;
-    private String previousApiValue;
+    private boolean isModified;
 
     public TranslatorConfigurable() {
         settingsGui = new TranslationConfigure();
         provider = TranslatorProvider.getInstance();
         translator = provider.getTranslator();
         propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
-        previousApiValue = propertiesManager.getProperties("yandex.api-key");
         initializeYandexApiKeyTextField();
     }
 
@@ -45,21 +43,20 @@ public class TranslatorConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return isEnteredKeyValid || isModified(yandexApiKey, previousApiValue);
+        return isModified;
     }
 
     @Override
     public void apply() {
-        previousApiValue = yandexApiKey.getText();
         try {
             if (translator.isApiKeyValid(yandexApiKey.getText())) {
                 updateApiKey();
                 settingsGui.getIncorrectApeLabel().setVisible(false);
                 yandexApiKey.setText("");
-                isEnteredKeyValid = true;
+                setModified(true);
             } else {
                 settingsGui.getIncorrectApeLabel().setVisible(true);
-                isEnteredKeyValid = false;
+                setModified(false);
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -93,7 +90,12 @@ public class TranslatorConfigurable implements Configurable {
 
             private void hideIncorrectApiLable() {
                 settingsGui.getIncorrectApeLabel().setVisible(false);
+                setModified(true);
             }
         });
+    }
+
+    private void setModified(boolean b) {
+        this.isModified = b;
     }
 }
