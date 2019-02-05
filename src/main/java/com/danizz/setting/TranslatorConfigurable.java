@@ -9,6 +9,8 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import java.io.IOException;
 
 public class TranslatorConfigurable implements Configurable {
@@ -25,8 +27,8 @@ public class TranslatorConfigurable implements Configurable {
         provider = TranslatorProvider.getInstance();
         translator = provider.getTranslator();
         propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
-        yandexApiKey = settingsGui.getYandexApiKey();
         previousApiValue = propertiesManager.getProperties("yandex.api-key");
+        initializeYandexApiKeyTextField();
     }
 
     @Nls(capitalization = Nls.Capitalization.Title)
@@ -43,7 +45,7 @@ public class TranslatorConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return isEnteredKeyValid || isModified(settingsGui.getYandexApiKey(), previousApiValue);
+        return isEnteredKeyValid || isModified(yandexApiKey, previousApiValue);
     }
 
     @Override
@@ -54,6 +56,7 @@ public class TranslatorConfigurable implements Configurable {
                 updateApiKey();
                 settingsGui.getIncorrectApeLabel().setVisible(false);
                 yandexApiKey.setText("");
+                isEnteredKeyValid = true;
             } else {
                 settingsGui.getIncorrectApeLabel().setVisible(true);
                 isEnteredKeyValid = false;
@@ -66,5 +69,31 @@ public class TranslatorConfigurable implements Configurable {
     private void updateApiKey() {
         propertiesManager.setProperty("yandex.api-key", yandexApiKey.getText());
         translator.setApiKey(yandexApiKey.getText());
+    }
+
+    private void initializeYandexApiKeyTextField() {
+        yandexApiKey = settingsGui.getYandexApiKeyTextField();
+        yandexApiKey.getDocument().addDocumentListener(new DocumentListener() {
+            @Override
+            public void insertUpdate(DocumentEvent documentEvent) {
+                hideIncorrectApiLable();
+
+            }
+
+            @Override
+            public void removeUpdate(DocumentEvent documentEvent) {
+                hideIncorrectApiLable();
+
+            }
+
+            @Override
+            public void changedUpdate(DocumentEvent documentEvent) {
+                hideIncorrectApiLable();
+            }
+
+            private void hideIncorrectApiLable() {
+                settingsGui.getIncorrectApeLabel().setVisible(false);
+            }
+        });
     }
 }

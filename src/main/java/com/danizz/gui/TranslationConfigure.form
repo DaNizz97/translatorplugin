@@ -39,7 +39,7 @@
               <text value="Your API Key for Yandex"/>
             </properties>
           </component>
-          <component id="6cb2a" class="javax.swing.JTextField" binding="yandexAPIKey">
+          <component id="6cb2a" class="javax.swing.JTextField" binding="yandexAPIKeyTextField">
             <constraints>
               <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

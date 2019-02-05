@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class TranslationConfigure {
     private JPanel root;
-    private JTextField yandexAPIKey;
+    private JTextField yandexAPIKeyTextField;
     private JLabel incorrectApeLabel;
 
     public TranslationConfigure() {
@@ -15,8 +15,8 @@ public class TranslationConfigure {
         return root;
     }
 
-    public JTextField getYandexApiKey() {
-        return yandexAPIKey;
+    public JTextField getYandexApiKeyTextField() {
+        return yandexAPIKeyTextField;
     }
 
     public JLabel getIncorrectApeLabel() {
