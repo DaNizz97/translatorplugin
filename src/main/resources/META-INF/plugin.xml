@@ -2,14 +2,14 @@
     <id>com.danizz.TranslatorPlugin</id>
     <name>Simple Translator</name>
     <vendor email="wottkas@gmail.com" url="https://gitlab.com/DaNizz97">Nizovkin Daniil</vendor>
-    <idea-version since-build="162"/>
 
     <description><![CDATA[
     Translate selected text with Alt + G hotkey or with double mouse click.<br>
-    Change translator engine in Settings | Tools | Translator Settings<br>
+    Change Yandex Translate API Key in Settings | Tools | Translator Settings<br>
     Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all document.<br>
 
     ]]></description>
+    <depends>com.intellij.modules.lang</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <applicationConfigurable groupId="tools" displayName="Translator Settings"
@@ -28,5 +28,13 @@
             <mouse-shortcut keymap="$default" keystroke="button1 doubleClick"/>
         </action>
     </actions>
+
+    <idea-version since-build="141.0"/>
+    <change-notes><![CDATA[
+    <ul>
+        <li>1.1.0: Change translator engine (now you can't choose it) and add ability to update Yandex Translator API Key on your own</li>
+        <li> 1.0.1: Update Compatibility.</li>
+    </ul>
+    ]]></change-notes>
 
 </idea-plugin>
