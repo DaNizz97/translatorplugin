@@ -29,7 +29,7 @@ public class TranslatorConfigurable implements Configurable {
         provider = TranslatorProvider.getInstance();
         translator = provider.getTranslator();
         propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
-        incorrectApeLabel = settingsGui.getIncorrectApeLabel();
+        incorrectApeLabel = settingsGui.getIncorrectApiLabel();
         initializeYandexApiKeyTextField();
     }
 
@@ -82,23 +82,23 @@ public class TranslatorConfigurable implements Configurable {
         yandexApiKey.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent documentEvent) {
-                hideIncorrectApiLable();
+                hideIncorrectApiLabel();
 
             }
 
             @Override
             public void removeUpdate(DocumentEvent documentEvent) {
-                hideIncorrectApiLable();
+                hideIncorrectApiLabel();
 
             }
 
             @Override
             public void changedUpdate(DocumentEvent documentEvent) {
-                hideIncorrectApiLable();
+                hideIncorrectApiLabel();
             }
 
-            private void hideIncorrectApiLable() {
-                settingsGui.getIncorrectApeLabel().setVisible(false);
+            private void hideIncorrectApiLabel() {
+                settingsGui.getIncorrectApiLabel().setVisible(false);
                 setModified(true);
             }
         });

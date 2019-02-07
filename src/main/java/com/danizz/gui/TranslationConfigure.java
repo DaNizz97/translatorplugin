@@ -5,10 +5,10 @@ import javax.swing.*;
 public class TranslationConfigure {
     private JPanel root;
     private JTextField yandexAPIKeyTextField;
-    private JLabel incorrectApeLabel;
+    private JLabel incorrectApiLabel;
 
     public TranslationConfigure() {
-        incorrectApeLabel.setVisible(false);
+        incorrectApiLabel.setVisible(false);
     }
 
     public JPanel getRoot() {
@@ -19,7 +19,7 @@ public class TranslationConfigure {
         return yandexAPIKeyTextField;
     }
 
-    public JLabel getIncorrectApeLabel() {
-        return incorrectApeLabel;
+    public JLabel getIncorrectApiLabel() {
+        return incorrectApiLabel;
     }
 }
