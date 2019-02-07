@@ -18,14 +18,7 @@ public class TranslateAction extends AnAction implements DumbAware {
     public void actionPerformed(AnActionEvent e) {
         messageViewer = new PopupMessageViewer(e);
         textSelector = new TextSelector(e);
-        String translatedMessage;
-        try {
-            translatedMessage = provider.getTranslator().translate(textSelector.getSelectedText());
-        } catch (IOException e1) {
-            translatedMessage = textSelector.getSelectedText();
-            e1.printStackTrace();
-        }
-        messageViewer.showTranslatedText(translatedMessage);
+        messageViewer.showMessage(provider.getTranslator(), textSelector.getSelectedText());
     }
 
 }

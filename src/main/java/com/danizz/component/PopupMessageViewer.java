@@ -1,5 +1,6 @@
 package com.danizz.component;
 
+import com.danizz.translator.Translator;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -8,6 +9,7 @@ import com.intellij.ui.awt.RelativePoint;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
 
 public class PopupMessageViewer {
     private final JComponent jComponent;
@@ -19,17 +21,25 @@ public class PopupMessageViewer {
         point = textSelector.extractPoint();
     }
 
-    public void showTranslatedText(String translatedText) {
-
+    private void createMessage(String text, JBColor color) {
         JBPopupFactory.getInstance()
                 .createHtmlTextBalloonBuilder(
-                        translatedText,
+                        text,
                         null,
-                        JBColor.GRAY,
+                        color,
                         null)
                 .setFadeoutTime(7500)
                 .createBalloon()
                 .show(new RelativePoint(jComponent, point),
                         Balloon.Position.below);
+    }
+
+    public void showMessage(Translator translator, String selectedText) {
+        try {
+            createMessage(translator.translate(selectedText), JBColor.LIGHT_GRAY);
+        } catch (IOException e) {
+            e.printStackTrace();
+            createMessage("Sorry, couldn't translate", JBColor.RED);
+        }
     }
 }

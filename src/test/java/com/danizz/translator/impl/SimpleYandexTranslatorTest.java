@@ -33,4 +33,16 @@ public class SimpleYandexTranslatorTest {
         String stringInCamelCase = "Строка для перевода";
         assertEquals("The string to translate", translator.translate(stringInCamelCase));
     }
+
+    @Test
+    public void isApiKeyValidTest() throws  IOException{
+        String apiKey = "trnsl.1.1.20190104T101334Z.58a19d25ba02f8b6.b11842436bbf4e1997e4dd963bb66413942b40d9";
+        assertTrue(translator.isApiKeyValid(apiKey));
+    }
+
+    @Test
+    public void isApiKeyNotValidTest() throws  IOException{
+        String apiKey = "not_valid_api_key";
+        assertFalse(translator.isApiKeyValid(apiKey));
+    }
 }
