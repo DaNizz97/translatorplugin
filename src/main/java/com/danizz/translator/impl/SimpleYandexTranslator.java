@@ -27,7 +27,7 @@ public class SimpleYandexTranslator implements Translator {
 
     public SimpleYandexTranslator() {
         this.parser = new NotationParserImpl();
-        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
+        propertiesManager = new PropertiesManager("/config.properties");
         API_KEY = propertiesManager.getProperties("yandex.api-key");
     }
 

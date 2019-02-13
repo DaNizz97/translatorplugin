@@ -1,5 +1,6 @@
 package com.danizz;
 
+import javax.management.loading.PrivateMLet;
 import java.io.*;
 import java.util.Properties;
 
@@ -15,11 +16,11 @@ public class PropertiesManager {
     }
 
     private void loadPropertyFileForInput() {
-        try (FileInputStream fis = new FileInputStream(path)) {
-            properties.load(fis);
+        try {
+            properties.load(PropertiesManager.class.getResourceAsStream(path));
         } catch (FileNotFoundException e) {
+            System.err.println("Property file " + path + " doesn't exist!");
             e.printStackTrace();
-            System.err.println("Property file " + path + "doesn't exist!");
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -31,7 +32,7 @@ public class PropertiesManager {
 
     public void setProperty(String property, String value) {
         properties.setProperty(property, value);
-        try (OutputStream fos = new FileOutputStream(path)){
+        try (OutputStream fos = new FileOutputStream(path)) {
             properties.store(fos, null);
         } catch (IOException e) {
             e.printStackTrace();
