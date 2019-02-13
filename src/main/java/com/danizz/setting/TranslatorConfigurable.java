@@ -28,7 +28,7 @@ public class TranslatorConfigurable implements Configurable {
         settingsGui = new TranslationConfigure();
         provider = TranslatorProvider.getInstance();
         translator = provider.getTranslator();
-        propertiesManager = new PropertiesManager("/home/da-nizz/IdeaProjects/TranslatorPlugin/src/main/resources/config.properties");
+        propertiesManager = new PropertiesManager("src/main/resources/config.properties");
         incorrectApeLabel = settingsGui.getIncorrectApiLabel();
         initializeYandexApiKeyTextField();
     }

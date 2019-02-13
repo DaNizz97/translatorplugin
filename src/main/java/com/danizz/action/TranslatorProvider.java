@@ -1,11 +1,7 @@
 package com.danizz.action;
 
-import com.danizz.PropertiesManager;
 import com.danizz.translator.Translator;
-import com.danizz.translator.impl.SimpleMultillectTranslator;
 import com.danizz.translator.impl.SimpleYandexTranslator;
-import org.jetbrains.annotations.Contract;
-import org.jetbrains.annotations.NotNull;
 
 //TODO: implement updating key for Yandex Translator
 public class TranslatorProvider {
