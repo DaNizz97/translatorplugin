@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="4591d" layout-manager="GridLayoutManager" row-count="4" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="4591d" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -19,6 +19,8 @@
         <properties>
           <background color="-855310"/>
           <enabled value="true"/>
+          <foreground color="-855310"/>
+          <inheritsPopupMenu value="false"/>
         </properties>
         <border type="none"/>
         <children>
@@ -63,6 +65,116 @@
               <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
             </constraints>
           </vspacer>
+          <component id="19fea" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Your own language"/>
+            </properties>
+          </component>
+          <component id="9d4c3" class="javax.swing.JComboBox" binding="langSet">
+            <constraints>
+              <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="af&#9;:&#9;Afrikaans"/>
+                <item value="am&#9;:&#9;Amharic"/>
+                <item value="ar&#9;:&#9;Arabic"/>
+                <item value="az&#9;:&#9;Azerbaijani"/>
+                <item value="ba&#9;:&#9;Bashkir"/>
+                <item value="be&#9;:&#9;Belarusian"/>
+                <item value="bg&#9;:&#9;Bulgarian"/>
+                <item value="bn&#9;:&#9;Bengali"/>
+                <item value="bs&#9;:&#9;Bosnian"/>
+                <item value="ca&#9;:&#9;Catalan"/>
+                <item value="ceb&#9;:&#9;Cebuano"/>
+                <item value="cs&#9;:&#9;Czech"/>
+                <item value="cy&#9;:&#9;Welsh"/>
+                <item value="da&#9;:&#9;Danish"/>
+                <item value="de&#9;:&#9;German"/>
+                <item value="el&#9;:&#9;Greek"/>
+                <item value="en&#9;:&#9;English"/>
+                <item value="eo&#9;:&#9;Esperanto"/>
+                <item value="es&#9;:&#9;Spanish"/>
+                <item value="et&#9;:&#9;Estonian"/>
+                <item value="eu&#9;:&#9;Basque"/>
+                <item value="fa&#9;:&#9;Persian"/>
+                <item value="fi&#9;:&#9;Finnish"/>
+                <item value="fr&#9;:&#9;French"/>
+                <item value="ga&#9;:&#9;Irish"/>
+                <item value="gd&#9;:&#9;Scottish Gaelic"/>
+                <item value="gl&#9;:&#9;Galician"/>
+                <item value="gu&#9;:&#9;Gujarati"/>
+                <item value="he&#9;:&#9;Hebrew"/>
+                <item value="hi&#9;:&#9;Hindi"/>
+                <item value="hr&#9;:&#9;Croatian"/>
+                <item value="ht&#9;:&#9;Haitian"/>
+                <item value="hu&#9;:&#9;Hungarian"/>
+                <item value="hy&#9;:&#9;Armenian"/>
+                <item value="id&#9;:&#9;Indonesian"/>
+                <item value="is&#9;:&#9;Icelandic"/>
+                <item value="it&#9;:&#9;Italian"/>
+                <item value="ja&#9;:&#9;Japanese"/>
+                <item value="jv&#9;:&#9;Javanese"/>
+                <item value="ka&#9;:&#9;Georgian"/>
+                <item value="kk&#9;:&#9;Kazakh"/>
+                <item value="km&#9;:&#9;Khmer"/>
+                <item value="kn&#9;:&#9;Kannada"/>
+                <item value="ko&#9;:&#9;Korean"/>
+                <item value="ky&#9;:&#9;Kyrgyz"/>
+                <item value="la&#9;:&#9;Latin"/>
+                <item value="lb&#9;:&#9;Luxembourgish"/>
+                <item value="lo&#9;:&#9;Lao"/>
+                <item value="lt&#9;:&#9;Lithuanian"/>
+                <item value="lv&#9;:&#9;Latvian"/>
+                <item value="mg&#9;:&#9;Malagasy"/>
+                <item value="mhr&#9;:&#9;Mari"/>
+                <item value="mi&#9;:&#9;Maori"/>
+                <item value="mk&#9;:&#9;Macedonian"/>
+                <item value="ml&#9;:&#9;Malayalam"/>
+                <item value="mn&#9;:&#9;Mongolian"/>
+                <item value="mr&#9;:&#9;Marathi"/>
+                <item value="mrj&#9;:&#9;Hill Mari"/>
+                <item value="ms&#9;:&#9;Malay"/>
+                <item value="mt&#9;:&#9;Maltese"/>
+                <item value="my&#9;:&#9;Burmese"/>
+                <item value="ne&#9;:&#9;Nepali"/>
+                <item value="nl&#9;:&#9;Dutch"/>
+                <item value="no&#9;:&#9;Norwegian"/>
+                <item value="pa&#9;:&#9;Punjabi"/>
+                <item value="pap&#9;:&#9;Papiamento"/>
+                <item value="pl&#9;:&#9;Polish"/>
+                <item value="pt&#9;:&#9;Portuguese"/>
+                <item value="ro&#9;:&#9;Romanian"/>
+                <item value="ru&#9;:&#9;Russian"/>
+                <item value="si&#9;:&#9;Sinhalese"/>
+                <item value="sk&#9;:&#9;Slovak"/>
+                <item value="sl&#9;:&#9;Slovenian"/>
+                <item value="sq&#9;:&#9;Albanian"/>
+                <item value="sr&#9;:&#9;Serbian"/>
+                <item value="su&#9;:&#9;Sundanese"/>
+                <item value="sv&#9;:&#9;Swedish"/>
+                <item value="sw&#9;:&#9;Swahili"/>
+                <item value="ta&#9;:&#9;Tamil"/>
+                <item value="te&#9;:&#9;Telugu"/>
+                <item value="tg&#9;:&#9;Tajik"/>
+                <item value="th&#9;:&#9;Thai"/>
+                <item value="tl&#9;:&#9;Tagalog"/>
+                <item value="tr&#9;:&#9;Turkish"/>
+                <item value="tt&#9;:&#9;Tatar"/>
+                <item value="udm&#9;:&#9;Udmurt"/>
+                <item value="uk&#9;:&#9;Ukrainian"/>
+                <item value="ur&#9;:&#9;Urdu"/>
+                <item value="uz&#9;:&#9;Uzbek"/>
+                <item value="vi&#9;:&#9;Vietnamese"/>
+                <item value="xh&#9;:&#9;Xhosa"/>
+                <item value="yi&#9;:&#9;Yiddish"/>
+                <item value="zh&#9;:&#9;Chinese"/>
+              </model>
+            </properties>
+          </component>
         </children>
       </grid>
       <vspacer id="c070b">
