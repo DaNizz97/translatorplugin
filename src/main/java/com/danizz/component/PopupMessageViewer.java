@@ -34,12 +34,11 @@ public class PopupMessageViewer {
                         Balloon.Position.below);
     }
 
-    public void showMessage(Translator translator, String selectedText) {
-        try {
-            createMessage(translator.translate(selectedText), JBColor.LIGHT_GRAY);
-        } catch (IOException e) {
-            e.printStackTrace();
-            createMessage("Sorry, couldn't translate", JBColor.RED);
-        }
+    public void showTranslatedText(String text) {
+        createMessage(text, JBColor.LIGHT_GRAY);
+    }
+
+    public void showErrorMessage() {
+        createMessage("Sorry, couldn't translate.", JBColor.RED);
     }
 }

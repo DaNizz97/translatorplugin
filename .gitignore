@@ -10,3 +10,4 @@ gradlew.bat
 *.ipr
 /out/
 gradle.properties
+config.properties
