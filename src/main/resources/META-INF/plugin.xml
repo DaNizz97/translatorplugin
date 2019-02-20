@@ -15,6 +15,7 @@
         <applicationConfigurable groupId="tools" displayName="Translator Settings"
                                  id="preferences.TranslatorConfigurable"
                                  instance="com.danizz.setting.TranslatorConfigurable"/>
+        <applicationService serviceImplementation="com.danizz.setting.PersistenceManager"/>
 
     </extensions>
 

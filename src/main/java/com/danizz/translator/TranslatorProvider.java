@@ -1,16 +1,14 @@
-package com.danizz.action;
+package com.danizz.translator;
 
-import com.danizz.translator.Translator;
 import com.danizz.translator.impl.SimpleYandexTranslator;
 
-//TODO: implement updating key for Yandex Translator
 public class TranslatorProvider {
     private Translator translator;
 
-    private static TranslatorProvider ourInstance = new TranslatorProvider();
+    private static TranslatorProvider instance = new TranslatorProvider();
 
     public static TranslatorProvider getInstance() {
-        return ourInstance;
+        return instance;
     }
 
     private TranslatorProvider() {
