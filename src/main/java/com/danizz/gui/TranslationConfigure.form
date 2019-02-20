@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="root" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="511" height="400"/>
+      <xy x="20" y="20" width="550" height="400"/>
     </constraints>
     <properties>
       <enabled value="true"/>
@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="4591d" layout-manager="GridLayoutManager" row-count="5" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="4591d" layout-manager="GridLayoutManager" row-count="6" column-count="5" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -30,7 +30,7 @@
             </constraints>
             <properties>
               <font size="20"/>
-              <text value="Plugin Settings"/>
+              <text value="Translator Settings"/>
             </properties>
           </component>
           <component id="ce23b" class="javax.swing.JLabel">
@@ -73,105 +73,216 @@
               <text value="Your own language"/>
             </properties>
           </component>
-          <component id="9d4c3" class="javax.swing.JComboBox" binding="langSet">
+          <component id="9d4c3" class="javax.swing.JComboBox" binding="languageFromComboBox">
             <constraints>
               <grid row="4" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <model>
-                <item value="af&#9;:&#9;Afrikaans"/>
-                <item value="am&#9;:&#9;Amharic"/>
-                <item value="ar&#9;:&#9;Arabic"/>
-                <item value="az&#9;:&#9;Azerbaijani"/>
-                <item value="ba&#9;:&#9;Bashkir"/>
-                <item value="be&#9;:&#9;Belarusian"/>
-                <item value="bg&#9;:&#9;Bulgarian"/>
-                <item value="bn&#9;:&#9;Bengali"/>
-                <item value="bs&#9;:&#9;Bosnian"/>
-                <item value="ca&#9;:&#9;Catalan"/>
-                <item value="ceb&#9;:&#9;Cebuano"/>
-                <item value="cs&#9;:&#9;Czech"/>
-                <item value="cy&#9;:&#9;Welsh"/>
-                <item value="da&#9;:&#9;Danish"/>
-                <item value="de&#9;:&#9;German"/>
-                <item value="el&#9;:&#9;Greek"/>
-                <item value="en&#9;:&#9;English"/>
-                <item value="eo&#9;:&#9;Esperanto"/>
-                <item value="es&#9;:&#9;Spanish"/>
-                <item value="et&#9;:&#9;Estonian"/>
-                <item value="eu&#9;:&#9;Basque"/>
-                <item value="fa&#9;:&#9;Persian"/>
-                <item value="fi&#9;:&#9;Finnish"/>
-                <item value="fr&#9;:&#9;French"/>
-                <item value="ga&#9;:&#9;Irish"/>
-                <item value="gd&#9;:&#9;Scottish Gaelic"/>
-                <item value="gl&#9;:&#9;Galician"/>
-                <item value="gu&#9;:&#9;Gujarati"/>
-                <item value="he&#9;:&#9;Hebrew"/>
-                <item value="hi&#9;:&#9;Hindi"/>
-                <item value="hr&#9;:&#9;Croatian"/>
-                <item value="ht&#9;:&#9;Haitian"/>
-                <item value="hu&#9;:&#9;Hungarian"/>
-                <item value="hy&#9;:&#9;Armenian"/>
-                <item value="id&#9;:&#9;Indonesian"/>
-                <item value="is&#9;:&#9;Icelandic"/>
-                <item value="it&#9;:&#9;Italian"/>
-                <item value="ja&#9;:&#9;Japanese"/>
-                <item value="jv&#9;:&#9;Javanese"/>
-                <item value="ka&#9;:&#9;Georgian"/>
-                <item value="kk&#9;:&#9;Kazakh"/>
-                <item value="km&#9;:&#9;Khmer"/>
-                <item value="kn&#9;:&#9;Kannada"/>
-                <item value="ko&#9;:&#9;Korean"/>
-                <item value="ky&#9;:&#9;Kyrgyz"/>
-                <item value="la&#9;:&#9;Latin"/>
-                <item value="lb&#9;:&#9;Luxembourgish"/>
-                <item value="lo&#9;:&#9;Lao"/>
-                <item value="lt&#9;:&#9;Lithuanian"/>
-                <item value="lv&#9;:&#9;Latvian"/>
-                <item value="mg&#9;:&#9;Malagasy"/>
-                <item value="mhr&#9;:&#9;Mari"/>
-                <item value="mi&#9;:&#9;Maori"/>
-                <item value="mk&#9;:&#9;Macedonian"/>
-                <item value="ml&#9;:&#9;Malayalam"/>
-                <item value="mn&#9;:&#9;Mongolian"/>
-                <item value="mr&#9;:&#9;Marathi"/>
-                <item value="mrj&#9;:&#9;Hill Mari"/>
-                <item value="ms&#9;:&#9;Malay"/>
-                <item value="mt&#9;:&#9;Maltese"/>
-                <item value="my&#9;:&#9;Burmese"/>
-                <item value="ne&#9;:&#9;Nepali"/>
-                <item value="nl&#9;:&#9;Dutch"/>
-                <item value="no&#9;:&#9;Norwegian"/>
-                <item value="pa&#9;:&#9;Punjabi"/>
-                <item value="pap&#9;:&#9;Papiamento"/>
-                <item value="pl&#9;:&#9;Polish"/>
-                <item value="pt&#9;:&#9;Portuguese"/>
-                <item value="ro&#9;:&#9;Romanian"/>
-                <item value="ru&#9;:&#9;Russian"/>
-                <item value="si&#9;:&#9;Sinhalese"/>
-                <item value="sk&#9;:&#9;Slovak"/>
-                <item value="sl&#9;:&#9;Slovenian"/>
-                <item value="sq&#9;:&#9;Albanian"/>
-                <item value="sr&#9;:&#9;Serbian"/>
-                <item value="su&#9;:&#9;Sundanese"/>
-                <item value="sv&#9;:&#9;Swedish"/>
-                <item value="sw&#9;:&#9;Swahili"/>
-                <item value="ta&#9;:&#9;Tamil"/>
-                <item value="te&#9;:&#9;Telugu"/>
-                <item value="tg&#9;:&#9;Tajik"/>
-                <item value="th&#9;:&#9;Thai"/>
-                <item value="tl&#9;:&#9;Tagalog"/>
-                <item value="tr&#9;:&#9;Turkish"/>
-                <item value="tt&#9;:&#9;Tatar"/>
-                <item value="udm&#9;:&#9;Udmurt"/>
-                <item value="uk&#9;:&#9;Ukrainian"/>
-                <item value="ur&#9;:&#9;Urdu"/>
-                <item value="uz&#9;:&#9;Uzbek"/>
-                <item value="vi&#9;:&#9;Vietnamese"/>
-                <item value="xh&#9;:&#9;Xhosa"/>
-                <item value="yi&#9;:&#9;Yiddish"/>
-                <item value="zh&#9;:&#9;Chinese"/>
+                <item value="Afrikaans ( af )"/>
+                <item value="Amharic ( am )"/>
+                <item value="Arabic ( ar )"/>
+                <item value="Azerbaijani ( az )"/>
+                <item value="Bashkir ( ba )"/>
+                <item value="Belarusian ( be )"/>
+                <item value="Bulgarian ( bg )"/>
+                <item value="Bengali ( bn )"/>
+                <item value="Bosnian ( bs )"/>
+                <item value="Catalan ( ca )"/>
+                <item value="Cebuano ( ceb )"/>
+                <item value="Czech ( cs )"/>
+                <item value="Welsh ( cy )"/>
+                <item value="Danish ( da )"/>
+                <item value="German ( de )"/>
+                <item value="Greek ( el )"/>
+                <item value="English ( en )"/>
+                <item value="Esperanto ( eo )"/>
+                <item value="Spanish ( es )"/>
+                <item value="Estonian ( et )"/>
+                <item value="Basque ( eu )"/>
+                <item value="Persian ( fa )"/>
+                <item value="Finnish ( fi )"/>
+                <item value="French ( fr )"/>
+                <item value="Irish ( ga )"/>
+                <item value="Scottish Gaelic ( gd )"/>
+                <item value="Galician ( gl )"/>
+                <item value="Gujarati ( gu )"/>
+                <item value="Hebrew ( he )"/>
+                <item value="Hindi ( hi )"/>
+                <item value="Croatian ( hr )"/>
+                <item value="Haitian ( ht )"/>
+                <item value="Hungarian ( hu )"/>
+                <item value="Armenian ( hy )"/>
+                <item value="Indonesian ( id )"/>
+                <item value="Icelandic ( is )"/>
+                <item value="Italian ( it )"/>
+                <item value="Japanese ( ja )"/>
+                <item value="Javanese ( jv )"/>
+                <item value="Georgian ( ka )"/>
+                <item value="Kazakh ( kk )"/>
+                <item value="Khmer ( km )"/>
+                <item value="Kannada ( kn )"/>
+                <item value="Korean ( ko )"/>
+                <item value="Kyrgyz ( ky )"/>
+                <item value="Latin ( la )"/>
+                <item value="Luxembourgish ( lb )"/>
+                <item value="Lao ( lo )"/>
+                <item value="Lithuanian ( lt )"/>
+                <item value="Latvian ( lv )"/>
+                <item value="Malagasy ( mg )"/>
+                <item value="Mari ( mhr )"/>
+                <item value="Maori ( mi )"/>
+                <item value="Macedonian ( mk )"/>
+                <item value="Malayalam ( ml )"/>
+                <item value="Mongolian ( mn )"/>
+                <item value="Marathi ( mr )"/>
+                <item value="Hill Mari ( mrj )"/>
+                <item value="Malay ( ms )"/>
+                <item value="Maltese ( mt )"/>
+                <item value="Burmese ( my )"/>
+                <item value="Nepali ( ne )"/>
+                <item value="Dutch ( nl )"/>
+                <item value="Norwegian ( no )"/>
+                <item value="Punjabi ( pa )"/>
+                <item value="Papiamento ( pap )"/>
+                <item value="Polish ( pl )"/>
+                <item value="Portuguese ( pt )"/>
+                <item value="Romanian ( ro )"/>
+                <item value="Russian ( ru )"/>
+                <item value="Sinhalese ( si )"/>
+                <item value="Slovak ( sk )"/>
+                <item value="Slovenian ( sl )"/>
+                <item value="Albanian ( sq )"/>
+                <item value="Serbian ( sr )"/>
+                <item value="Sundanese ( su )"/>
+                <item value="Swedish ( sv )"/>
+                <item value="Swahili ( sw )"/>
+                <item value="Tamil ( ta )"/>
+                <item value="Telugu ( te )"/>
+                <item value="Tajik ( tg )"/>
+                <item value="Thai ( th )"/>
+                <item value="Tagalog ( tl )"/>
+                <item value="Turkish ( tr )"/>
+                <item value="Tatar ( tt )"/>
+                <item value="Udmurt ( udm )"/>
+                <item value="Ukrainian ( uk )"/>
+                <item value="Urdu ( ur )"/>
+                <item value="Uzbek ( uz )"/>
+                <item value="Vietnamese ( vi )"/>
+                <item value="Xhosa ( xh )"/>
+                <item value="Yiddish ( yi )"/>
+                <item value="Chinese ( zh )"/>
+              </model>
+            </properties>
+          </component>
+          <component id="74ab0" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Language &quot;To&quot;"/>
+              <toolTipText value="Language used to translate from your own"/>
+            </properties>
+          </component>
+          <component id="e47a0" class="javax.swing.JComboBox" binding="languageToComboBox">
+            <constraints>
+              <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="Afrikaans ( af )"/>
+                <item value="Amharic ( am )"/>
+                <item value="Arabic ( ar )"/>
+                <item value="Azerbaijani ( az )"/>
+                <item value="Bashkir ( ba )"/>
+                <item value="Belarusian ( be )"/>
+                <item value="Bulgarian ( bg )"/>
+                <item value="Bengali ( bn )"/>
+                <item value="Bosnian ( bs )"/>
+                <item value="Catalan ( ca )"/>
+                <item value="Cebuano ( ceb )"/>
+                <item value="Czech ( cs )"/>
+                <item value="Welsh ( cy )"/>
+                <item value="Danish ( da )"/>
+                <item value="German ( de )"/>
+                <item value="Greek ( el )"/>
+                <item value="English ( en )"/>
+                <item value="Esperanto ( eo )"/>
+                <item value="Spanish ( es )"/>
+                <item value="Estonian ( et )"/>
+                <item value="Basque ( eu )"/>
+                <item value="Persian ( fa )"/>
+                <item value="Finnish ( fi )"/>
+                <item value="French ( fr )"/>
+                <item value="Irish ( ga )"/>
+                <item value="Scottish Gaelic ( gd )"/>
+                <item value="Galician ( gl )"/>
+                <item value="Gujarati ( gu )"/>
+                <item value="Hebrew ( he )"/>
+                <item value="Hindi ( hi )"/>
+                <item value="Croatian ( hr )"/>
+                <item value="Haitian ( ht )"/>
+                <item value="Hungarian ( hu )"/>
+                <item value="Armenian ( hy )"/>
+                <item value="Indonesian ( id )"/>
+                <item value="Icelandic ( is )"/>
+                <item value="Italian ( it )"/>
+                <item value="Japanese ( ja )"/>
+                <item value="Javanese ( jv )"/>
+                <item value="Georgian ( ka )"/>
+                <item value="Kazakh ( kk )"/>
+                <item value="Khmer ( km )"/>
+                <item value="Kannada ( kn )"/>
+                <item value="Korean ( ko )"/>
+                <item value="Kyrgyz ( ky )"/>
+                <item value="Latin ( la )"/>
+                <item value="Luxembourgish ( lb )"/>
+                <item value="Lao ( lo )"/>
+                <item value="Lithuanian ( lt )"/>
+                <item value="Latvian ( lv )"/>
+                <item value="Malagasy ( mg )"/>
+                <item value="Mari ( mhr )"/>
+                <item value="Maori ( mi )"/>
+                <item value="Macedonian ( mk )"/>
+                <item value="Malayalam ( ml )"/>
+                <item value="Mongolian ( mn )"/>
+                <item value="Marathi ( mr )"/>
+                <item value="Hill Mari ( mrj )"/>
+                <item value="Malay ( ms )"/>
+                <item value="Maltese ( mt )"/>
+                <item value="Burmese ( my )"/>
+                <item value="Nepali ( ne )"/>
+                <item value="Dutch ( nl )"/>
+                <item value="Norwegian ( no )"/>
+                <item value="Punjabi ( pa )"/>
+                <item value="Papiamento ( pap )"/>
+                <item value="Polish ( pl )"/>
+                <item value="Portuguese ( pt )"/>
+                <item value="Romanian ( ro )"/>
+                <item value="Russian ( ru )"/>
+                <item value="Sinhalese ( si )"/>
+                <item value="Slovak ( sk )"/>
+                <item value="Slovenian ( sl )"/>
+                <item value="Albanian ( sq )"/>
+                <item value="Serbian ( sr )"/>
+                <item value="Sundanese ( su )"/>
+                <item value="Swedish ( sv )"/>
+                <item value="Swahili ( sw )"/>
+                <item value="Tamil ( ta )"/>
+                <item value="Telugu ( te )"/>
+                <item value="Tajik ( tg )"/>
+                <item value="Thai ( th )"/>
+                <item value="Tagalog ( tl )"/>
+                <item value="Turkish ( tr )"/>
+                <item value="Tatar ( tt )"/>
+                <item value="Udmurt ( udm )"/>
+                <item value="Ukrainian ( uk )"/>
+                <item value="Urdu ( ur )"/>
+                <item value="Uzbek ( uz )"/>
+                <item value="Vietnamese ( vi )"/>
+                <item value="Xhosa ( xh )"/>
+                <item value="Yiddish ( yi )"/>
+                <item value="Chinese ( zh )"/>
               </model>
             </properties>
           </component>

@@ -1,9 +1,9 @@
 package com.danizz.setting;
 
 import com.danizz.PropertiesManager;
-import com.danizz.action.TranslatorProvider;
 import com.danizz.gui.TranslationConfigure;
 import com.danizz.translator.Translator;
+import com.danizz.translator.TranslatorProvider;
 import com.intellij.openapi.options.Configurable;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;
@@ -22,15 +22,17 @@ public class TranslatorConfigurable implements Configurable {
     private Translator translator;
     private JTextField yandexApiKey;
     private boolean isModified;
-    private JLabel incorrectApeLabel;
+    private JLabel incorrectApiKeyLabel;
+    private LanguageConfigure languageConfigure;
 
     public TranslatorConfigurable() {
         settingsGui = new TranslationConfigure();
         provider = TranslatorProvider.getInstance();
         translator = provider.getTranslator();
         propertiesManager = new PropertiesManager("/config.properties");
-        incorrectApeLabel = settingsGui.getIncorrectApiLabel();
-        initializeYandexApiKeyTextField();
+        incorrectApiKeyLabel = settingsGui.getIncorrectApiLabel();
+        initYandexApiKeyTextField();
+        languageConfigure = new LanguageConfigure(settingsGui);
     }
 
     @Nls(capitalization = Nls.Capitalization.Title)
@@ -47,12 +49,17 @@ public class TranslatorConfigurable implements Configurable {
 
     @Override
     public boolean isModified() {
-        return isModified;
+        return isModified || languageConfigure.isModified();
     }
 
     @Override
     public void apply() {
-        updateApiKey();
+        if (isModified) {
+            updateApiKey();
+        }
+        if (languageConfigure.isModified()) {
+            languageConfigure.save();
+        }
     }
 
     private void updateApiKey() {
@@ -60,24 +67,22 @@ public class TranslatorConfigurable implements Configurable {
             if (translator.isApiKeyValid(yandexApiKey.getText())) {
                 propertiesManager.setProperty("yandex.api-key", yandexApiKey.getText());
                 translator.setApiKey(yandexApiKey.getText());
-                incorrectApeLabel.setVisible(false);
+                incorrectApiKeyLabel.setVisible(false);
                 yandexApiKey.setText("");
                 setModified(true);
             } else {
-                incorrectApeLabel.setText("Sorry, your API Key is not valid.");
-                incorrectApeLabel.setVisible(true);
+                setIncorrectApiKeyLabelVisible("Sorry, your API Key is not valid.");
                 setModified(false);
             }
         } catch (IOException e) {
             e.printStackTrace();
             if (e instanceof UnknownHostException || e instanceof SocketException) {
-                incorrectApeLabel.setText("Sorry, you can't change API Key without internet connection.");
-                incorrectApeLabel.setVisible(true);
+                setIncorrectApiKeyLabelVisible("Sorry, you can't change API Key without internet connection.");
             }
         }
     }
 
-    private void initializeYandexApiKeyTextField() {
+    private void initYandexApiKeyTextField() {
         yandexApiKey = settingsGui.getYandexApiKeyTextField();
         yandexApiKey.getDocument().addDocumentListener(new DocumentListener() {
             @Override
@@ -106,5 +111,10 @@ public class TranslatorConfigurable implements Configurable {
 
     private void setModified(boolean b) {
         this.isModified = b;
+    }
+
+    private void setIncorrectApiKeyLabelVisible(String message) {
+        incorrectApiKeyLabel.setText(message);
+        incorrectApiKeyLabel.setVisible(true);
     }
 }

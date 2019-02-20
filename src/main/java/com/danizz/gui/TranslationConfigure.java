@@ -6,7 +6,8 @@ public class TranslationConfigure {
     private JPanel root;
     private JTextField yandexAPIKeyTextField;
     private JLabel incorrectApiLabel;
-    private JComboBox langSet;
+    private JComboBox languageFromComboBox;
+    private JComboBox languageToComboBox;
 
     public TranslationConfigure() {
         incorrectApiLabel.setVisible(false);
@@ -24,7 +25,11 @@ public class TranslationConfigure {
         return incorrectApiLabel;
     }
 
-    public JComboBox getLangSet() {
-        return langSet;
+    public JComboBox getLanguageFromComboBox() {
+        return languageFromComboBox;
+    }
+
+    public JComboBox getLanguageToComboBox() {
+        return languageToComboBox;
     }
 }
