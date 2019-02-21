@@ -29,9 +29,11 @@ public class LanguageConfigure {
     public void save() {
         if (isFromComboBoxModified) {
             persistenceManager.setLanguageFrom((String) settingsGui.getLanguageFromComboBox().getSelectedItem());
+            isFromComboBoxModified = false;
         }
         if (isToComboBoxModified) {
             persistenceManager.setLanguageTo((String) settingsGui.getLanguageToComboBox().getSelectedItem());
+            isToComboBoxModified = false;
         }
 
     }
