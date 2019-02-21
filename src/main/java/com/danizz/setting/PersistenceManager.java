@@ -17,8 +17,8 @@ import org.jetbrains.annotations.Nullable;
 public class PersistenceManager implements PersistentStateComponent<PersistenceManager> {
 
     private String yandexApiKey;
-    private String languageFrom;
-    private String languageTo;
+    private String languageFrom = "Russian ( ru )";
+    private String languageTo = "English ( en )";
 
     @Nullable
     @Override

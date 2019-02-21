@@ -38,4 +38,9 @@
     </ul>
     ]]></change-notes>
 
+    <application-components>
+        <component>
+            <implementation-class>com.danizz.component.LanguageInitializer</implementation-class>
+        </component>
+    </application-components>
 </idea-plugin>

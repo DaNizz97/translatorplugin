@@ -9,5 +9,9 @@ public interface Translator {
 
     void setApiKey(String apiKey);
 
+    void setLanguageFrom(String languageFrom);
+
+    void setLanguageTo(String languageTo);
+
     boolean isApiKeyValid(String apiKey) throws IOException;
 }

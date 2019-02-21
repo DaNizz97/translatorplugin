@@ -12,9 +12,9 @@ import org.json.simple.parser.ParseException;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.UnsupportedEncodingException;
 import java.net.*;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class SimpleYandexTranslator implements Translator {
@@ -24,6 +24,8 @@ public class SimpleYandexTranslator implements Translator {
     private final String STRING_TRNSLATE_URL = "https://translate.yandex.net/api/v1.5/tr.json/translate?key=";
     private final String STRING_DETECT_URL = "https://translate.yandex.net/api/v1.5/tr.json/detect?key=";
     private String API_KEY;
+    private Optional<String> languageFrom;
+    private Optional<String> languageTo;
 
     public SimpleYandexTranslator() {
         this.parser = new NotationParserImpl();
@@ -47,10 +49,11 @@ public class SimpleYandexTranslator implements Translator {
         input = parser.parseCamelNotation(input);
         input = parser.parseSnakeNotation(input);
         String lang = detectLanguage(input);
-        if (!Objects.requireNonNull(lang).equals("ru")) {
-            lang = "ru";
+        String lang2 = languageFrom.orElse("ru");
+        if (!lang.equals(lang2)) {
+            lang = lang2;
         } else {
-            lang = "en";
+            lang = languageTo.orElse("en");
         }
         return translate(lang, input);
     }
@@ -74,7 +77,7 @@ public class SimpleYandexTranslator implements Translator {
         URL testConnectionUrl = new URL(STRING_DETECT_URL + apiKey);
         String parameters = "text=" +
                 URLEncoder.encode("test text", "UTF-8");
-        JSONObject jsonObject = null;
+        JSONObject jsonObject;
         try {
             jsonObject = getJsonFromConnection(testConnectionUrl, parameters);
         } catch (IOException e) {
@@ -109,4 +112,13 @@ public class SimpleYandexTranslator implements Translator {
         }
         return (JSONObject) obj;
     }
+
+    public void setLanguageFrom(String languageFrom) {
+        this.languageFrom = Optional.ofNullable(languageFrom);
+    }
+
+    public void setLanguageTo(String languageTo) {
+        this.languageTo = Optional.ofNullable(languageTo);
+    }
+
 }
