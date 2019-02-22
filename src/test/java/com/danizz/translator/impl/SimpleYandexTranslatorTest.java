@@ -14,6 +14,8 @@ public class SimpleYandexTranslatorTest {
     @Before
     public void setUp() {
         translator = new SimpleYandexTranslator();
+        translator.setLanguageFrom("ru");
+        translator.setLanguageTo("en");
     }
 
     @Test
@@ -44,5 +46,10 @@ public class SimpleYandexTranslatorTest {
     public void isApiKeyNotValidTest() throws  IOException{
         String apiKey = "not_valid_api_key";
         assertFalse(translator.isApiKeyValid(apiKey));
+    }
+
+    @Test
+    public void translate() throws IOException {
+        translator.translate("Hello");
     }
 }

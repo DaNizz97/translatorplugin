@@ -2,13 +2,10 @@ package com.danizz.setting;
 
 import com.danizz.LanguageReductionExtractor;
 import com.danizz.Trimmer;
-import com.danizz.gui.TranslationConfigure;
+import com.danizz.setting.gui.TranslationConfigure;
 import com.danizz.translator.TranslatorProvider;
-import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class LanguageConfigure {
 
@@ -54,11 +51,5 @@ public class LanguageConfigure {
             translatorProvider.getTranslator().setLanguageTo(trimmer.trim(langToString));
             isToComboBoxModified = false;
         }
-    }
-    private void save(@NotNull JComboBox comboBox, String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
-        String lang = (String)comboBox.getSelectedItem();
-        Class<?> clazz = persistenceManager.getClass();
-        Method langFromString = clazz.getMethod(methodName, String.class);
-        langFromString.invoke(persistenceManager, lang);
     }
 }

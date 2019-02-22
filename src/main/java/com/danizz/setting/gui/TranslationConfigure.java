@@ -1,4 +1,4 @@
-package com.danizz.gui;
+package com.danizz.setting.gui;
 
 import javax.swing.*;
 

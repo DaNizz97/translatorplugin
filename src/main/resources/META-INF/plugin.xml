@@ -4,9 +4,11 @@
     <vendor email="wottkas@gmail.com" url="https://gitlab.com/DaNizz97">Nizovkin Daniil</vendor>
 
     <description><![CDATA[
-    Translate selected text with Alt + G hotkey or with double mouse click.<br>
+    This is a plugin that allows you to translate texts from your IDE by hotkey.<br>
+    In the settings you can choose languages and direction of translation.<br>
+    Translate selected text with Alt + G hotkey<br>
     Change Yandex Translate API Key in Settings | Tools | Translator Settings<br>
-    Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all document.<br>
+    Also you can just press Alt + G without selecting text - Plugin will select the word on which the carriage stands or all line, or all block.<br>
 
     ]]></description>
     <depends>com.intellij.modules.lang</depends>
@@ -29,9 +31,11 @@
         </action>
     </actions>
 
-    <idea-version since-build="162.0"/>
+    <idea-version since-build="172.4"/>
     <change-notes><![CDATA[
     <ul>
+        <li>2.0.1: Bug fix with Russian characters encoding. </li>
+        <li>2.0.0: Disable translate by double mouse click. Adding the ability to select languages for translation.</li>
         <li>1.1.1: Bugfix</li>
         <li>1.1.0: Change translator engine (now you can't choose it) and add ability to update Yandex Translator API Key on your own</li>
         <li> 1.0.1: Update Compatibility.</li>

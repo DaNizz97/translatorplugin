@@ -1,6 +1,6 @@
 package com.danizz.setting;
 
-import com.danizz.gui.TranslationConfigure;
+import com.danizz.setting.gui.TranslationConfigure;
 import com.danizz.translator.Translator;
 import com.danizz.translator.TranslatorProvider;
 

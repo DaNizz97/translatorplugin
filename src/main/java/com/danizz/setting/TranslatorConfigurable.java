@@ -1,6 +1,6 @@
 package com.danizz.setting;
 
-import com.danizz.gui.TranslationConfigure;
+import com.danizz.setting.gui.TranslationConfigure;
 import com.intellij.openapi.options.Configurable;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.Nullable;

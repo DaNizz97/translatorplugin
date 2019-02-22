@@ -1,6 +1,5 @@
 package com.danizz.component;
 
-import com.danizz.translator.Translator;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
@@ -9,7 +8,7 @@ import com.intellij.ui.awt.RelativePoint;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 
 public class PopupMessageViewer {
     private final JComponent jComponent;
@@ -19,12 +18,13 @@ public class PopupMessageViewer {
         TextSelector textSelector = new TextSelector(e);
         jComponent = textSelector.getCurrentComponent();
         point = textSelector.extractPoint();
+
     }
 
     private void createMessage(String text, JBColor color) {
         JBPopupFactory.getInstance()
                 .createHtmlTextBalloonBuilder(
-                        text,
+                        new String(text.getBytes(), StandardCharsets.UTF_8),
                         null,
                         color,
                         null)

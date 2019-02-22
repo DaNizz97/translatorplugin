@@ -11,7 +11,7 @@ public class PropertiesManagerTest {
 
     @Before
     public void setUp() {
-        propertiesManager = new PropertiesManager("src/test/resources/test.properties");
+        propertiesManager = new PropertiesManager("/test.properties");
     }
 
     @Test
@@ -32,7 +32,7 @@ public class PropertiesManagerTest {
 
     @Test
     public void getStoredProperties() {
-        PropertiesManager pm = new PropertiesManager("src/test/resources/test.properties");
+        PropertiesManager pm = new PropertiesManager("/test.properties");
         String s = pm.getProperties("property-name");
         assertEquals("value", s);
     }
